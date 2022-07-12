@@ -1,23 +1,14 @@
 //the faq questions
-let q1 = document.getElementById("q1");
-let q2 = document.getElementById("q2");
-let q3 = document.getElementById("q3");
-let q4 = document.getElementById("q4");
+let q1 = document.getElementById("q1"); let q2 = document.getElementById("q2"); let q3 = document.getElementById("q3"); let q4 = document.getElementById("q4");
 let q5 = document.getElementById("q5");
 
 //the faq answers
-const ans1 = document.getElementById("ans1");
-const ans2 = document.getElementById("ans2");
-const ans3 = document.getElementById("ans3");
-const ans4 = document.getElementById("ans4");
-const ans5 = document.getElementById("ans5");
+const ans1 = document.getElementById("ans1"); const ans2 = document.getElementById("ans2"); const ans3 = document.getElementById("ans3");
+const ans4 = document.getElementById("ans4"); const ans5 = document.getElementById("ans5");
 
 //the close dropdown arrows
-let close1 = document.getElementById("close1");
-let close2 = document.getElementById("close2");
-let close3 = document.getElementById("close3");
-let close4 = document.getElementById("close4");
-let close5 = document.getElementById("close5");
+let close1 = document.getElementById("close1"); let close2 = document.getElementById("close2"); let close3 = document.getElementById("close3");
+let close4 = document.getElementById("close4"); let close5 = document.getElementById("close5");
 
 //to display the faq answers
 let clicked1 = false; let clicked2 = false; let clicked3 = false; let clicked4 = false; let clicked5 = false;
@@ -77,9 +68,28 @@ q5.addEventListener("click", () => {
     }
 })
 
-//the questions
-let quest1 = document.getElementById("quest1");
-let quest2 = document.getElementById("quest2");
-let quest3 = document.getElementById("quest3");
-let quest4 = document.getElementById("quest4");
-let quest5 = document.getElementById("quest5");
+/*let arr = [
+    document.getElementById("q1"), 
+    document.getElementById("q2"), 
+    document.getElementById("q3"), 
+    document.getElementById("q4"), 
+    document.getElementById("q5")
+];
+arr.values().addEventListener("click", function() {
+    let toggle = (ans, close, clicked) => {
+        if (ans.classList.contains("hide")) {
+            ans.classList.remove("hide");
+            close.style.transform = "rotate(180deg)";
+            clicked = true;
+        } else if (clicked === true) {
+            ans.classList.add("hide");
+            close.style.transform = "rotate(360deg)";
+            clicked = false;
+        }
+    }
+    toggle(ans1, close1, clicked1);
+    toggle(ans2, close2, clicked2);
+    toggle(ans3, close3, clicked3);
+    toggle(ans4, close4, clicked4);
+    toggle(ans5, close5, clicked5);
+})*/
