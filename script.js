@@ -1,5 +1,5 @@
 //the faq questions
-let q1 = document.getElementById("q1"); let q2 = document.getElementById("q2"); let q3 = document.getElementById("q3"); let q4 = document.getElementById("q4");
+/*let q1 = document.getElementById("q1"); let q2 = document.getElementById("q2"); let q3 = document.getElementById("q3"); let q4 = document.getElementById("q4");
 let q5 = document.getElementById("q5");
 
 //the faq answers
@@ -66,30 +66,45 @@ q5.addEventListener("click", () => {
         close5.style.transform = "rotate(360deg)";
         clicked5 = false;
     }
-})
+})*/
 
-/*let arr = [
-    document.getElementById("q1"), 
-    document.getElementById("q2"), 
-    document.getElementById("q3"), 
-    document.getElementById("q4"), 
-    document.getElementById("q5")
-];
-arr.values().addEventListener("click", function() {
-    let toggle = (ans, close, clicked) => {
-        if (ans.classList.contains("hide")) {
-            ans.classList.remove("hide");
+//using jquery
+/*$(document).ready(function() {
+    let clicked = false;
+    $(".quest").click(function(){
+        if(clicked == false) {
+            $(".quest :nth-child(2)").removeClass("hide");
+            $(".quest-cont :nth-child(2)").css("transform", "rotate(180deg)");
+            $(".quest :nth-child(2)").css("transform", "rotate(0deg)");
+            clicked = true;
+        } else if(clicked == true) {
+            $(".quest :nth-child(2)").addClass("hide");
+            $(".quest-cont :nth-child(2)").css("transform", "rotate(360deg)");
+            clicked = false;
+        }
+    })
+    }
+  );*/
+
+
+let questCont = document.querySelectorAll(".quest-cont");
+let qaCont = document.querySelectorAll(".quest");
+
+//for each quest cont
+questCont.forEach((que, index) => {
+    let hiddenAns = qaCont[index].lastElementChild;
+    let close = questCont[index].lastElementChild;
+    let clicked = false;
+    que.addEventListener("click", () => {
+        if (clicked === false) {
+            hiddenAns.classList.remove("hide");
             close.style.transform = "rotate(180deg)";
             clicked = true;
         } else if (clicked === true) {
-            ans.classList.add("hide");
+            hiddenAns.classList.add("hide");
             close.style.transform = "rotate(360deg)";
             clicked = false;
         }
-    }
-    toggle(ans1, close1, clicked1);
-    toggle(ans2, close2, clicked2);
-    toggle(ans3, close3, clicked3);
-    toggle(ans4, close4, clicked4);
-    toggle(ans5, close5, clicked5);
-})*/
+
+    })
+})
