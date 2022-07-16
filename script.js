@@ -1,3 +1,45 @@
+let questCont = document.querySelectorAll(".quest-cont");
+let qaCont = document.querySelectorAll(".quest");
+
+//for each quest cont
+questCont.forEach((que, index) => {
+    let hiddenAns = qaCont[index].lastElementChild;
+    let close = questCont[index].lastElementChild;
+    let clicked = false;
+    que.addEventListener("click", () => {
+        if (clicked === false) {
+            hiddenAns.classList.remove("hide");
+            close.style.transform = "rotate(180deg)";
+            clicked = true;
+        } else if (clicked === true) {
+            hiddenAns.classList.add("hide");
+            close.style.transform = "rotate(360deg)";
+            clicked = false;
+        }
+
+    })
+})
+
+
+//using jquery
+/*$(document).ready(function() {
+    let clicked = false;
+    $(".quest").click(function(){
+        if(clicked == false) {
+            $(".quest :nth-child(2)").removeClass("hide");
+            $(".quest-cont :nth-child(2)").css("transform", "rotate(180deg)");
+            $(".quest :nth-child(2)").css("transform", "rotate(0deg)");
+            clicked = true;
+        } else if(clicked == true) {
+            $(".quest :nth-child(2)").addClass("hide");
+            $(".quest-cont :nth-child(2)").css("transform", "rotate(360deg)");
+            clicked = false;
+        }
+    })
+    }
+  );*/
+
+  
 //the faq questions
 /*let q1 = document.getElementById("q1"); let q2 = document.getElementById("q2"); let q3 = document.getElementById("q3"); let q4 = document.getElementById("q4");
 let q5 = document.getElementById("q5");
@@ -68,43 +110,6 @@ q5.addEventListener("click", () => {
     }
 })*/
 
-//using jquery
-/*$(document).ready(function() {
-    let clicked = false;
-    $(".quest").click(function(){
-        if(clicked == false) {
-            $(".quest :nth-child(2)").removeClass("hide");
-            $(".quest-cont :nth-child(2)").css("transform", "rotate(180deg)");
-            $(".quest :nth-child(2)").css("transform", "rotate(0deg)");
-            clicked = true;
-        } else if(clicked == true) {
-            $(".quest :nth-child(2)").addClass("hide");
-            $(".quest-cont :nth-child(2)").css("transform", "rotate(360deg)");
-            clicked = false;
-        }
-    })
-    }
-  );*/
 
 
-let questCont = document.querySelectorAll(".quest-cont");
-let qaCont = document.querySelectorAll(".quest");
 
-//for each quest cont
-questCont.forEach((que, index) => {
-    let hiddenAns = qaCont[index].lastElementChild;
-    let close = questCont[index].lastElementChild;
-    let clicked = false;
-    que.addEventListener("click", () => {
-        if (clicked === false) {
-            hiddenAns.classList.remove("hide");
-            close.style.transform = "rotate(180deg)";
-            clicked = true;
-        } else if (clicked === true) {
-            hiddenAns.classList.add("hide");
-            close.style.transform = "rotate(360deg)";
-            clicked = false;
-        }
-
-    })
-})
